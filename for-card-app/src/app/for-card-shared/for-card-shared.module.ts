@@ -7,6 +7,7 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
 import { HomeComponent } from './components/home/home.component';
 import {CardNumberPipe} from './services/card-number.pipe';
 import {DatePipe, DateTimePipe, PaymentCardDatePipe} from './services/date.pipe';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {DatePipe, DateTimePipe, PaymentCardDatePipe} from './services/date.pipe'
     CardNumberPipe,
     DatePipe,
     DateTimePipe,
-    PaymentCardDatePipe
+    PaymentCardDatePipe,
+    UserProfileComponent
   ],
   exports: [
     CardNumberPipe,
