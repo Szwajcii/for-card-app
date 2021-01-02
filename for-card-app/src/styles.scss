@@ -11,3 +11,33 @@
 @import "theme/molecules/card.scss";
 @import "theme/molecules/navbar.scss";
 @import "theme/molecules/payment-card.scss";
+
+/* PAGES */
+
+
+/* BASIC */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: $wrapper-width;
+  padding: 2em;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 1200px) {
+    max-width: 1100px;
+    padding: 3em;
+  }
+
+}
