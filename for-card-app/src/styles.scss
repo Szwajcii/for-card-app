@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "theme/theme.scss";
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+/* ATOMS */
+@import "theme/atoms/controls.scss";
+@import "theme/atoms/grid.scss";
+@import "theme/atoms/variables.scss";
+
+/* MOLECULES */
+@import "theme/molecules/card.scss";
+@import "theme/molecules/navbar.scss";
