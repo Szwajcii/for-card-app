@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import {CardNumberPipe} from './services/card-number.pipe';
 import {DatePipe, DateTimePipe, PaymentCardDatePipe} from './services/date.pipe';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { PaymentCardComponent } from './components/payment-card/payment-card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     DatePipe,
     DateTimePipe,
     PaymentCardDatePipe,
-    UserProfileComponent
+    UserProfileComponent,
+    PaymentCardComponent
   ],
   exports: [
     CardNumberPipe,
