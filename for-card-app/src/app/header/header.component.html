@@ -7,16 +7,16 @@
     <div class="nav-links">
       <ul>
         <li>
-          <a routerLinkActive="active-link">Home</a>
+          <a routerLinkActive="active-link" [routerLink]="['/home']">Home</a>
         </li>
         <li>
-          <a routerLinkActive="active-link">Payment cards</a>
+          <a routerLinkActive="active-link" [routerLink]="['/payment-cards']">Payment cards</a>
         </li>
         <li>
-          <a routerLinkActive="active-link">Profile</a>
+          <a routerLinkActive="active-link" [routerLink]="['/profile']">Profile</a>
         </li>
         <li>
-          <a routerLinkActive="active-link">Logout</a>
+          <a [routerLink]="" (click)="onLogout()">Logout</a>
         </li>
       </ul>
     </div>
