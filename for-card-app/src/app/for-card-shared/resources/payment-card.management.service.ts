@@ -33,4 +33,7 @@ export class PaymentCardManagementService {
     return this.http.post<boolean>(`${this.paymentCardApi}/verify-payment-card`, verifyModel);
   }
 
+  deletePaymentCard(paymentCardId: string) {
+    return this.http.delete(`${this.paymentCardApi}/delete/${paymentCardId}`);
+  }
 }
