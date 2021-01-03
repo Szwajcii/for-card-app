@@ -1,1 +1,23 @@
-<p>payment-card-form works!</p>
+<form [formGroup]="generalForm" *ngIf="generalForm">
+
+  <h1 *ngIf="!editCard">Add new payment card</h1>
+
+  <div *ngIf="editCard">
+    <mat-slide-toggle (change)="toggleEdit()">Edit</mat-slide-toggle>
+  </div>
+
+  <app-form-group
+    *ngIf="paymentCardDetailsForm"
+    [fg]="generalForm"
+    [name]="'paymentCardDetailsForm'"
+    [controls]="paymentCardDetailsFormControls"
+    [gridColumns]="gridColumns"></app-form-group>
+
+  <div class="controls" *ngIf="!this.isDisabled">
+    <button mat-flat-button type="button" class="col-danger" (click)="onCancel()">Cancel</button>
+    <button mat-flat-button type="submit" class="col-primary" (click)="onSubmit()">Save</button>
+  </div>
+
+</form>
+
+<p>General form {{generalForm.value | json}}</p>
