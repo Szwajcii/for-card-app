@@ -1,6 +1,7 @@
 <div [formGroup]="fg" class="fg">
   <div [formGroupName]="name" *ngIf="fg.get(name)">
     <mat-grid-list
+      gutterSize="2em"
       [cols]="gridColumns"
       rowHeight="60px">
       <ng-container *ngFor="let item of controls; let i=index;">
