@@ -1,6 +1,11 @@
 /* BASIC */
+$paymentCardWidth: 320px;
+$paymentCardHeight: 220px;
+$paymentCardOffset: 20px;
+
 
 /* COLORS */
+$lightGray: rgba(0, 0, 0, 0.3);
 $white: #F5F5F5;
 $black: #000;
 $dark: #212121;
@@ -13,5 +18,5 @@ $transition: all .3s ease-in-out;
 
 /* BOX SHADOWS */
 $box-shadow__base: -10px 10px 20px 0 rgba(0, 0, 0, 0.3);
-$box-shadow__grid-card: 0 15px 40px 0 #F6F6F8;
+$box-shadow__grid-card: 0 15px 40px 0 #E6E6E8;
 $box-shadow__grid-card--hover: 0 0 55px -15px #b8b8b8;
