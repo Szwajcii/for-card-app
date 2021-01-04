@@ -1,0 +1,56 @@
+.grid-container {
+
+  margin: 2.6em 0;
+
+  .grid-card {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      width: 280px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1em;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      color: $dark;
+      box-shadow: $box-shadow__grid-card;
+      transition: $transition;
+
+      &:hover {
+        text-decoration: none;
+        cursor: pointer;
+        transform: scale(1.05);
+        box-shadow: $box-shadow__grid-card--hover;
+        border: 1px solid #fff;
+      }
+
+      // Add new payment card - start
+      .payment-card__new {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+          margin: 0;
+        }
+
+        i {
+          margin-bottom: 0.2em;
+        }
+
+      }
+      // Add new payment card - end
+
+      // Payment card details - start
+      .payment-card__details {
+
+      }
+      // Payment card details - end
+    }
+
+  }
+}
