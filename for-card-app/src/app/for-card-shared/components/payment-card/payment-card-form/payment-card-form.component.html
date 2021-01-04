@@ -13,9 +13,13 @@
     [controls]="paymentCardDetailsFormControls"
     [gridColumns]="gridColumns"></app-form-group>
 
-  <div class="controls" *ngIf="!this.isDisabled">
-    <button mat-flat-button type="button" class="col-danger" (click)="onCancel()">Cancel</button>
-    <button mat-flat-button type="submit" class="col-primary" (click)="onSubmit()">Save</button>
+  <div class="controls">
+    <button mat-flat-button type="submit" class="col-primary" color="accent"
+            (click)="onSubmit()" [disabled]="this.isDisabled">Save
+    </button>
+    <button mat-flat-button type="button" class="col-danger" color="warn"
+            (click)="onCancel()">Cancel
+    </button>
   </div>
 
 </form>

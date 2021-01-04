@@ -8,40 +8,48 @@
 
       <ng-container *ngIf="userPaymentCards">
         <ng-container *ngFor="let card of userPaymentCards; let cardIndex=index">
-          <div class="grid-card">
-            <a [routerLink]="" class="payment-card" (click)="activatePaymentCard(card)">
-              <div class="payment-card__details">
-                <div class="payment-card__logo">
-                  <img src="./assets/payment-card/{{card.paymentCardProvider}}-logo.png" alt="Payment card provider logo">
-                  <i class="far fa-circle" *ngIf="!card.cardActive"></i>
-                  <i class="fas fa-check-circle" *ngIf="card.cardActive"></i>
-                </div>
-                <div>
-                  <div class="payment-card__number">
-                    <h2>{{card.paymentCardNumber | CardNumberPipe}}</h2>
+
+          <div>
+
+            <div class="grid-card">
+              <a [routerLink]="" class="payment-card" (click)="activatePaymentCard(card)">
+                <div class="payment-card__details">
+                  <div class="payment-card__logo">
+                    <img src="./assets/payment-card/{{card.paymentCardProvider}}-logo.png" alt="Payment card provider logo">
+                    <i class="far fa-circle" *ngIf="!card.cardActive"></i>
+                    <i class="fas fa-check-circle" *ngIf="card.cardActive"></i>
                   </div>
-                  <div class="payment-card__info">
-                    <h4>{{card.paymentCardHolder}}</h4>
-                    <h4>{{card.expiryDate | PaymentCardDatePipe}}</h4>
+                  <div class="payment-card__description">
+                    <div class="payment-card__number">
+                      <h2>{{card.paymentCardNumber | CardNumberPipe}}</h2>
+                    </div>
+                    <div class="payment-card__info">
+                      <h4>{{card.paymentCardHolder}}</h4>
+                      <h4>{{card.expiryDate | PaymentCardDatePipe}}</h4>
+                    </div>
+                    <button mat-stroked-button color="primary"
+                            (click)="viewPaymentCardDetails(cardIndex, $event)">
+                      View details
+                    </button>
                   </div>
-                  <button mat-stroked-button color="primary"
-                          (click)="viewPaymentCardDetails(cardIndex, $event)">
-                    View details
-                  </button>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
+
           </div>
+
         </ng-container>
       </ng-container>
 
-      <div class="grid-card">
-        <a [routerLink]="" (click)="addNewPaymentCard()">
-          <div class="payment-card__new">
-            <i class="fas fa-plus"></i>
-            <h3>Add new payment card</h3>
-          </div>
-        </a>
+      <div>
+        <div class="grid-card">
+          <a [routerLink]="" (click)="addNewPaymentCard()">
+            <div class="payment-card__new">
+              <i class="fas fa-plus"></i>
+              <h3>Add new payment card</h3>
+            </div>
+          </a>
+        </div>
       </div>
 
     </div>
