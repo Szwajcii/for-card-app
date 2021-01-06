@@ -1,0 +1,21 @@
+<form [formGroup]="generalForm" *ngIf="generalForm">
+
+  <h1>Register new account</h1>
+
+  <app-form-group
+    *ngIf="registrationDetailsForm"
+    [fg]="generalForm"
+    [name]="'registrationDetailsForm'"
+    [controls]="registrationDetailsFormControls"
+    [gridColumns]="gridColumns"></app-form-group>
+
+  <div class="controls">
+    <button mat-flat-button type="submit" class="col-primary" color="accent"
+            (click)="onSubmit()" [disabled]="generalForm.invalid">Continue
+    </button>
+    <button mat-flat-button type="button" class="col-danger" color="warn"
+            (click)="onCancel()">Cancel
+    </button>
+  </div>
+
+</form>

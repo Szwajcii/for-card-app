@@ -12,6 +12,9 @@ import {PaymentCardComponent} from './components/payment-card/payment-card.compo
 import {PaymentCardFormComponent} from './components/payment-card/payment-card-form/payment-card-form.component';
 import {FormGroupHelperService} from './services/form-group-helper.service';
 import {ForCardMatModule} from './modules/for-card-mat.module';
+import { AuthComponent } from './components/auth/auth.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import {ForCardMatModule} from './modules/for-card-mat.module';
     PaymentCardDatePipe,
     UserProfileComponent,
     PaymentCardComponent,
-    PaymentCardFormComponent
+    PaymentCardFormComponent,
+    AuthComponent,
+    RegistrationComponent,
+    ResetPasswordComponent
   ],
   exports: [
     CardNumberPipe,
