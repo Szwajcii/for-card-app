@@ -1,0 +1,41 @@
+.home-page {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .home-page__auth, .home-page__image {
+    width: 50%;
+    height: inherit;
+  }
+
+  .home-page__auth {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      margin-bottom: 1.4em;
+      font-size: 3em;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+    }
+
+    .home-page__controls {
+      display: flex;
+      align-items: flex-start;
+
+      mat-divider {
+        margin: 0 2em;
+        height: 100%;
+      }
+
+    }
+
+  }
+
+
+
+}
