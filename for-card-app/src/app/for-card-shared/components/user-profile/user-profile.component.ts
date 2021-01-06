@@ -5,6 +5,7 @@ import {FormGroupHelperService} from '../../services/form-group-helper.service';
 import {MessageService} from '../../services/message.service';
 import {FormGroupHelper} from '../../model/form-group-helper.model';
 import {addressFormFields} from '../../model/address-form-fields';
+import {userFormFields} from './user-form-fields';
 
 @Component({
   selector: 'app-user-profile',
@@ -13,11 +14,11 @@ import {addressFormFields} from '../../model/address-form-fields';
 })
 export class UserProfileComponent implements OnInit {
 
-  @Input() isDisabled: boolean;
   @Input() userProfile: any;
   @Input() userProfileFormFields: FormGroupHelper.Model[];
   @Output() submitEvent = new EventEmitter();
 
+  isDisabled = true;
   gridColumns = 4;
 
   generalForm: FormGroup;
@@ -37,7 +38,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userProfileDetailsFormControls = this.formGroupService.addControlToModel(this.userProfileFormFields);
+    this.userProfileDetailsFormControls = this.formGroupService.addControlToModel(userFormFields);
     this.addressDetailsFormControls = this.formGroupService.addControlToModel(addressFormFields);
 
     this.userProfileDetailsForm = this.formBuilder.group({
@@ -79,7 +80,7 @@ export class UserProfileComponent implements OnInit {
   toggleEdit() {
     this.isDisabled = !this.isDisabled;
     if (this.isDisabled) {
-      this.setFormValue(this.userProfile);
+      // this.setFormValue(this.userProfile);
       this.generalForm.disable();
     } else {
       this.generalForm.enable();
