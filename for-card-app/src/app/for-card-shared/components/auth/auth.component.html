@@ -1,0 +1,29 @@
+<form [formGroup]="generalForm" *ngIf="generalForm">
+
+  <h1>Login to your account</h1>
+
+  <app-form-group
+    *ngIf="loginDetailsForm"
+    [fg]="generalForm"
+    [name]="'loginDetailsForm'"
+    [controls]="loginDetailsFormControls"
+    [gridColumns]="gridColumns"></app-form-group>
+
+  <div class="controls">
+    <button mat-flat-button type="submit" class="col-primary" color="accent"
+            (click)="onSubmit()" [disabled]="generalForm.invalid">Continue
+    </button>
+    <button mat-flat-button type="button" class="col-danger" color="warn"
+            (click)="onCancel()">Cancel
+    </button>
+  </div>
+
+</form>
+
+<mat-divider></mat-divider>
+
+<div class="controls">
+  <button mat-stroked-button type="submit"
+          color="accent" (click)="openResetPasswordDialog()">Forgot password
+  </button>
+</div>
