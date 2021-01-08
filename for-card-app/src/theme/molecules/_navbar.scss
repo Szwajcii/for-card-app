@@ -1,0 +1,45 @@
+.nav-container {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2%;
+
+  .nav-logo {
+
+    img {
+      width: 60%;
+    }
+
+  }
+
+  .nav-links {
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
+      list-style: none;
+
+      li {
+
+        &:not(:last-child) {
+          margin-right: 3em;
+        }
+
+        a {
+          font-size: 1.4em;
+
+          &:hover {
+            text-decoration: none;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
