@@ -5,18 +5,18 @@ export class UserContext {
   sub: string;
   firstName: string;
   lastName: string;
-  role: Role;
+  roles: Role[];
   exp: Date;
   private _token?: string;
 
   constructor(id: string, sub: string, firstName: string,
-              lastName: string, role: Role,
+              lastName: string, roles: Role[],
               exp: Date) {
     this.id = id;
     this.sub = sub;
     this.firstName = firstName;
     this.lastName = lastName;
-    this.role = role;
+    this.roles = roles;
     this.exp = exp;
   }
 
