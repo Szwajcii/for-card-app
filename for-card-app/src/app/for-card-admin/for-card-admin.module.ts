@@ -5,11 +5,13 @@ import {RouterModule} from '@angular/router';
 import {ForCardSharedModule} from '../for-card-shared/for-card-shared.module';
 import {ForCardAdminRouting} from './for-card-admin.routing';
 import {ForCardMatModule} from '../for-card-shared/modules/for-card-mat.module';
+import { UsersComponent } from './components/users/users.component';
+import { UsersDatatableComponent } from './components/users-datatable/users-datatable.component';
 
 
 
 @NgModule({
-  declarations: [ForCardAdminComponent],
+  declarations: [ForCardAdminComponent, UsersComponent, UsersDatatableComponent],
   exports: [
     ForCardMatModule
   ],
