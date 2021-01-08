@@ -3,13 +3,12 @@
 
     <div class="card-header">
       <h1>User #</h1>
+      <div class="card-controls">
+        <mat-slide-toggle (change)="toggleEdit()">Edit</mat-slide-toggle>
+      </div>
     </div>
 
     <form [formGroup]="generalForm" *ngIf="generalForm">
-
-      <div>
-        <mat-slide-toggle (change)="toggleEdit()">Edit</mat-slide-toggle>
-      </div>
 
       <div>
         <h2>Profile details</h2>
