@@ -13,13 +13,23 @@
     display: flex;
     flex-direction: column;
 
-    h1 {
-      margin-bottom: 1.4em;
-      font-size: 3em;
+    .home-page__title {
+      h1 {
+        margin-bottom: 0.6em;
+        font-size: 4em;
+        color: $col-accent;
+        font-weight: bold;
+        letter-spacing: 4px;
+      }
+
+      h2 {
+        font-size: 2.2em;
+        line-height: 45px;
+      }
     }
 
     p {
-      font-size: 1.2em;
+      font-size: 20px;
       margin-bottom: 2em;
     }
 
