@@ -15,6 +15,8 @@ import {ForCardMatModule} from './modules/for-card-mat.module';
 import { AuthComponent } from './components/auth/auth.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import {UserCanAccessDirective} from './directives/user-can-access.directive';
+import { UserProfileFormComponent } from './components/user-profile/user-profile-form/user-profile-form.component';
 
 @NgModule({
   declarations: [
@@ -30,14 +32,17 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     PaymentCardFormComponent,
     AuthComponent,
     RegistrationComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    UserCanAccessDirective,
+    UserProfileFormComponent
   ],
   exports: [
     CardNumberPipe,
     DatePipe,
     DateTimePipe,
     PaymentCardDatePipe,
-    ForCardMatModule
+    ForCardMatModule,
+    UserCanAccessDirective
   ],
   imports: [
     CommonModule,
