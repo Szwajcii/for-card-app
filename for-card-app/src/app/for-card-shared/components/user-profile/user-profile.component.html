@@ -1,46 +1,15 @@
+<div *ngIf="isLoading">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+
 <div class="wrapper">
   <div class="card">
 
-    <div class="card-header">
-      <h1>User #</h1>
-      <div class="card-controls">
-        <mat-slide-toggle (change)="toggleEdit()">Edit</mat-slide-toggle>
-      </div>
-    </div>
+    <app-user-profile-form
+      *ngIf="userProfile"
+      [userProfile]="userProfile"
+      (submitEvent)="onSubmit($event)">
+    </app-user-profile-form>
 
-    <form [formGroup]="generalForm" *ngIf="generalForm">
-
-      <div>
-        <h2>Profile details</h2>
-
-        <app-form-group
-          *ngIf="userProfileDetailsForm"
-          [fg]="generalForm"
-          [name]="'userProfileDetailsForm'"
-          [controls]="userProfileDetailsFormControls"
-          [gridColumns]="gridColumns">
-        </app-form-group>
-
-
-        <h2>Address information</h2>
-
-        <app-form-group
-          *ngIf="addressDetailsForm"
-          [fg]="generalForm"
-          [name]="'addressDetailsForm'"
-          [controls]="addressDetailsFormControls"
-          [gridColumns]="gridColumns">
-        </app-form-group>
-      </div>
-
-      <div class="controls">
-        <button mat-flat-button type="submit" color="accent"
-                (click)="onSubmit()" [disabled]="this.isDisabled">Save
-        </button>
-      </div>
-
-    </form>
-
-    <p>General form {{generalForm.value | json}}</p>
   </div>
 </div>
