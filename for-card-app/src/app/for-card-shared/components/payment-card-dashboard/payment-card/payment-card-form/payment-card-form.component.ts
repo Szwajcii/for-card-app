@@ -1,11 +1,11 @@
 import {Component, Inject, EventEmitter, OnInit, Output} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {PaymentCardManagementService} from '../../../resources/payment-card.management.service';
-import {FormGroupHelperService} from '../../../services/form-group-helper.service';
-import {MessageService} from '../../../services/message.service';
+import {PaymentCardManagementService} from '../../../../resources/payment-card.management.service';
+import {FormGroupHelperService} from '../../../../services/form-group-helper.service';
+import {MessageService} from '../../../../services/message.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {paymentCardFormFields} from './payment-card-form-fields';
-import {PaymentCard} from '../../../model/payment-card.model';
+import {PaymentCard} from '../../../../model/payment-card.model';
 
 @Component({
   selector: 'app-payment-card-form',
@@ -45,6 +45,10 @@ export class PaymentCardFormComponent implements OnInit {
       this.isDisabled = this.data.isDisabled;
       this.formAction = this.data.formAction;
       this.editCard = true;
+    }
+
+    if (this.data.paymentCardHolder) {
+      this.paymentCardHolder = this.data.paymentCardHolder;
     }
 
     this.paymentCardDetailsForm = this.formBuilder.group({

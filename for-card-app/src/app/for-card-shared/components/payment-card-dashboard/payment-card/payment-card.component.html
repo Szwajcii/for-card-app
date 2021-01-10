@@ -2,6 +2,14 @@
   <div class="card">
     <div class="card-header">
       <h1>Payment cards</h1>
+      <div class="card-controls">
+        <button mat-flat-button color="accent"
+                [disabled]="!isCardSelected">Set card as active
+        </button>
+        <button mat-flat-button color="warn"
+                [disabled]="!isCardSelected">Delete card
+        </button>
+      </div>
     </div>
 
     <div class="grid-container">
@@ -12,7 +20,7 @@
           <div>
 
             <div class="grid-card">
-              <a [routerLink]="" class="payment-card" (click)="activatePaymentCard(card)">
+              <a [routerLink]="" class="payment-card" (click)="selectPaymentCard(card)">
                 <div class="payment-card__details">
                   <div class="payment-card__logo">
                     <img src="./assets/payment-card/{{card.paymentCardProvider}}-logo.png" alt="Payment card provider logo">

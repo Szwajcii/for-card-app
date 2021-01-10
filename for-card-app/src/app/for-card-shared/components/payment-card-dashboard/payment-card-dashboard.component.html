@@ -1,0 +1,8 @@
+<div *ngIf="isLoading">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+
+<app-payment-card
+  *ngIf="user"
+  [user]="user">
+</app-payment-card>

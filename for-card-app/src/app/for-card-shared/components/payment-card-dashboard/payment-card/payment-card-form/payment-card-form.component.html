@@ -2,8 +2,9 @@
 
   <h1 *ngIf="!editCard">Add new payment card</h1>
 
-  <div *ngIf="editCard">
+  <div *ngIf="editCard" class="edit-panel">
     <mat-slide-toggle (change)="toggleEdit()">Edit</mat-slide-toggle>
+    <button mat-stroked-button color="warn"><i class="far fa-trash-alt"></i></button>
   </div>
 
   <app-form-group

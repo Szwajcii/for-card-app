@@ -1,4 +1,4 @@
-import {FormGroupHelper} from '../../../model/form-group-helper.model';
+import {FormGroupHelper} from '../../../../model/form-group-helper.model';
 import {Validators} from '@angular/forms';
 
 export const paymentCardFormFields: FormGroupHelper.Model[] = [
