@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {UserManagementService} from '../../../for-card-shared/resources/user-management.service';
 
 @Component({
   selector: 'app-users',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  public displayedColumns: Array<string> = [
+    'name',
+    'cards',
+    'createdAt',
+    'modifiedAt',
+    'country'
+  ];
+
+  constructor(
+    private userManagementService: UserManagementService
+  ) {
+  }
 
   ngOnInit(): void {
   }

@@ -1,0 +1,50 @@
+<div class="data-table">
+
+  <mat-table mat-table #table [dataSource]="datasource" matSort>
+
+    <!-- Name column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <a [routerLink]="['details', element.id]">{{element.name}}</a>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Cards column -->
+    <ng-container matColumnDef="cards">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Cards</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.cards}}</mat-cell>
+    </ng-container>
+
+    <!-- Create date column -->
+    <ng-container matColumnDef="createdAt">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Created at</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.createdAt}}</mat-cell>
+    </ng-container>
+
+    <!-- Modified date column -->
+    <ng-container matColumnDef="modifiedAt">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Modified at</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.modifiedAt}}</mat-cell>
+    </ng-container>
+
+    <!-- Nation column -->
+    <ng-container matColumnDef="country">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Country</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.country}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+  </mat-table>
+
+  <mat-paginator #paginator
+    [length]="datasource.data.length"
+    [pageIndex]="0"
+    [pageSize]="5"
+    [pageSizeOptions]="[5, 10 ,20]"
+    [hidden]="datasource.data.length === 0">
+  </mat-paginator>
+
+</div>
