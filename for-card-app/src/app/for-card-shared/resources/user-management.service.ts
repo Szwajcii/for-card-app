@@ -20,8 +20,8 @@ export class UserManagementService {
   ) {
   }
 
-  findAllUsers(params: HttpParams): Observable<User.Model> {
-    return null;
+  findAllUsers(): Observable<User.Model[]> {
+    return this.http.get<User.Model[]>(`${this.userManagementApi}/all`);
   }
 
   findUserById(id: string): Observable<User.Model> {

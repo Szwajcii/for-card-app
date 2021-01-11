@@ -13,6 +13,10 @@ export class PaymentCardManagementService {
   constructor(private http: HttpClient) {
   }
 
+  findAllPaymentCards(): Observable<PaymentCard.Model[]> {
+    return this.http.get<PaymentCard.Model[]>(`${this.paymentCardApi}/all`);
+  }
+
   findAllUserPaymentCards(userId: string): Observable<PaymentCard.Model[]> {
     return this.http.get<PaymentCard.Model[]>(`${this.paymentCardApi}/all-payment-cards/${userId}`);
   }
