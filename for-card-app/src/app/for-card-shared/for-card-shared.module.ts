@@ -18,6 +18,8 @@ import {ResetPasswordComponent} from './components/reset-password/reset-password
 import {UserCanAccessDirective} from './directives/user-can-access.directive';
 import {UserProfileFormComponent} from './components/user-profile/user-profile-form/user-profile-form.component';
 import {PaymentCardDashboardComponent} from './components/payment-card-dashboard/payment-card-dashboard.component';
+import {ContactComponent} from './components/contact/contact.component';
+import {AboutUsComponent} from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import {PaymentCardDashboardComponent} from './components/payment-card-dashboard
     ResetPasswordComponent,
     UserCanAccessDirective,
     UserProfileFormComponent,
-    PaymentCardDashboardComponent
+    PaymentCardDashboardComponent,
+    ContactComponent,
+    AboutUsComponent
   ],
   exports: [
     CardNumberPipe,

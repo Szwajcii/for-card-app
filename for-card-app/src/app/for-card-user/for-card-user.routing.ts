@@ -4,6 +4,8 @@ import {ForCardUserComponent} from './for-card-user.component';
 import {UserProfileComponent} from '../for-card-shared/components/user-profile/user-profile.component';
 import {HomeComponent} from '../for-card-shared/components/home/home.component';
 import {PaymentCardDashboardComponent} from '../for-card-shared/components/payment-card-dashboard/payment-card-dashboard.component';
+import {AboutUsComponent} from '../for-card-shared/components/about-us/about-us.component';
+import {ContactComponent} from '../for-card-shared/components/contact/contact.component';
 
 export const ROUTES: Routes = [
   {
@@ -22,6 +24,18 @@ export const ROUTES: Routes = [
         path: 'profile',
         children: [
           {path: '', component: UserProfileComponent}
+        ]
+      },
+      {
+        path: 'about-us',
+        children: [
+          {path: '', component: AboutUsComponent}
+        ]
+      },
+      {
+        path: 'contact',
+        children: [
+          {path: '', component: ContactComponent}
         ]
       }
     ]
