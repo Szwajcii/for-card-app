@@ -1,0 +1,29 @@
+.searching, .no-records {
+  margin: 2em 0 2em 0;
+  font-size: 2em;
+  text-align: center;
+}
+
+.align-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.align-center {
+  display: flex;
+  justify-content: center;
+}
+
+.align-right {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+
+    &:first-child {
+      margin-right: 1em;
+    }
+
+  }
+
+}
