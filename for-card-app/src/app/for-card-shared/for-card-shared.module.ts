@@ -20,6 +20,7 @@ import {UserProfileFormComponent} from './components/user-profile/user-profile-f
 import {PaymentCardDashboardComponent} from './components/payment-card-dashboard/payment-card-dashboard.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {AboutUsComponent} from './components/about-us/about-us.component';
+import {ContactFormComponent} from './components/contact/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {AboutUsComponent} from './components/about-us/about-us.component';
     UserProfileFormComponent,
     PaymentCardDashboardComponent,
     ContactComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ContactFormComponent
   ],
   exports: [
     CardNumberPipe,
@@ -48,7 +50,8 @@ import {AboutUsComponent} from './components/about-us/about-us.component';
     DateTimePipe,
     PaymentCardDatePipe,
     ForCardMatModule,
-    UserCanAccessDirective
+    UserCanAccessDirective,
+    LoadingSpinnerComponent
   ],
   imports: [
     CommonModule,
