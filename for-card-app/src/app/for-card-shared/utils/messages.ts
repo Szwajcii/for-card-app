@@ -6,3 +6,4 @@ export const SUCCESSFULLY_ACTIVATED = 'Successfully activated!';
 /* ERRORS */
 export const UNEXPECTED_ERROR = 'Unexpected error has occurred!';
 export const UPDATE_HAS_FAILED = 'Update has failed!';
+export const CONNECTION_PROBLEM = 'Connection problem has occurred!';
