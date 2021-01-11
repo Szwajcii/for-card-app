@@ -77,6 +77,7 @@ export class AuthService {
       this.isAuthenticated = false;
       localStorage.removeItem(AuthService.USER_CONTEXT);
       this.clearRefreshTokenTimer();
+      this.router.navigate(['/home']);
     }, error => {
       console.log(error);
     });
