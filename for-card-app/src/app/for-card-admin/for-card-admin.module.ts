@@ -9,6 +9,8 @@ import {UsersComponent} from './components/users/users.component';
 import {UsersDatatableComponent} from './components/users/users-datatable/users-datatable.component';
 import {PaymentCardsComponent} from './components/payment-cards/payment-cards.component';
 import {PaymentCardsDatatableComponent} from './components/payment-cards/payment-cards-datatable/payment-cards-datatable.component';
+import {PaymentCardDetailsComponent} from './components/payment-cards/payment-card-details/payment-card-details.component';
+import {UserDetailsComponent} from './components/users/user-details/user-details.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import {PaymentCardsDatatableComponent} from './components/payment-cards/payment
     UsersComponent,
     UsersDatatableComponent,
     PaymentCardsComponent,
-    PaymentCardsDatatableComponent
+    PaymentCardsDatatableComponent,
+    PaymentCardDetailsComponent,
+    UserDetailsComponent
   ],
   exports: [
     ForCardMatModule
