@@ -1,0 +1,52 @@
+<div class="data-table">
+
+  <mat-table mat-table #table [dataSource]="datasource" matSort>
+
+    <!-- Payment card id column -->
+    <ng-container matColumnDef="code">
+      <mat-header-cell *matHeaderCellDef>Card code</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <a [routerLink]="[]">
+          <div>
+
+          </div>
+          {{element.id}}
+        </a>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Payment card provider column -->
+    <ng-container matColumnDef="cardProvider">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Provider</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.cardProvider}}</mat-cell>
+    </ng-container>
+
+    <!-- Payment card holder column -->
+    <ng-container matColumnDef="cardHolder">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Card holder</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.cardHolder}}</mat-cell>
+    </ng-container>
+
+    <!-- Payment card number -->
+    <ng-container matColumnDef="cardNumber">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Number</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.cardNumber | CardNumberPipe}}</mat-cell>
+    </ng-container>
+
+    <!-- Payment card expiry date -->
+    <ng-container matColumnDef="cardExpiryDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Expiry date</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.cardExpiryDate | PaymentCardDatePipe}}</mat-cell>
+    </ng-container>
+
+  </mat-table>
+
+  <mat-paginator #paginator
+                 [length]="datasource.data.length"
+                 [pageIndex]="0"
+                 [pageSize]="5"
+                 [pageSizeOptions]="[5, 10, 20]"
+                 [hidden]="datasource.data.length === 0">
+  </mat-paginator>
+
+</div>
