@@ -9,6 +9,7 @@
 
 /* MOLECULES */
 @import "theme/molecules/card.scss";
+@import "theme/molecules/code.scss";
 @import "theme/molecules/forms.scss";
 @import "theme/molecules/navbar.scss";
 @import "theme/molecules/payment-card.scss";
@@ -31,6 +32,7 @@ html, body {
   padding: 0;
   background: #eee;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .wrapper {
