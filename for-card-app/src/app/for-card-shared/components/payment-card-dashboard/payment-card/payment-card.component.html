@@ -4,10 +4,12 @@
       <h1>Payment cards</h1>
       <div class="card-controls">
         <button mat-flat-button color="accent"
-                [disabled]="!isCardSelected">Set card as active
+                [disabled]="!isCardToActive"
+                (click)="activatePaymentCard()">Set card as active
         </button>
         <button mat-flat-button color="warn"
-                [disabled]="!isCardSelected">Delete card
+                [disabled]="!isCardSelected"
+                (click)="deletePaymentCard()">Delete card
         </button>
       </div>
     </div>

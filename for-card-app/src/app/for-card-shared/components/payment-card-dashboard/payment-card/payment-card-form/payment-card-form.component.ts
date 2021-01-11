@@ -6,6 +6,7 @@ import {MessageService} from '../../../../services/message.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {paymentCardFormFields} from './payment-card-form-fields';
 import {PaymentCard} from '../../../../model/payment-card.model';
+import {SUCCESSFULLY_DELETED, UNEXPECTED_ERROR} from '../../../../utils/messages';
 
 @Component({
   selector: 'app-payment-card-form',
@@ -21,6 +22,7 @@ export class PaymentCardFormComponent implements OnInit {
   paymentCard: PaymentCard.Model;
   paymentCardHolder: string;
   formAction;
+  deleteMode = false;
   editCard = false;
 
   gridColumns = 4;
@@ -86,6 +88,25 @@ export class PaymentCardFormComponent implements OnInit {
     } else {
       this.generalForm.enable();
     }
+  }
+
+  toggleDeleteMode() {
+    this.deleteMode = !this.deleteMode;
+  }
+
+  cancelDeleteMode() {
+    this.deleteMode = false;
+  }
+
+  confirmDeleteCard() {
+    this.paymentCardService.deletePaymentCard(this.paymentCard.id)
+      .subscribe(resData => {
+        console.log(resData);
+        this.messageService.showMessage(SUCCESSFULLY_DELETED);
+      }, error => {
+        console.log(error);
+        this.messageService.showMessage(UNEXPECTED_ERROR);
+      });
   }
 
   onSubmit() {

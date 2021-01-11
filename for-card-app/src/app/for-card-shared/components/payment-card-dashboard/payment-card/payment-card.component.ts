@@ -6,6 +6,8 @@ import {PaymentCard} from '../../../model/payment-card.model';
 import {PaymentCardFormComponent} from './payment-card-form/payment-card-form.component';
 import {FormAction} from '../../../model/form-action.model';
 import {DIALOG_WIDTH} from '../../../utils/basic-properties';
+import {MessageService} from '../../../services/message.service';
+import {SUCCESSFULLY_ACTIVATED, SUCCESSFULLY_DELETED, UNEXPECTED_ERROR} from '../../../utils/messages';
 
 
 @Component({
@@ -20,11 +22,13 @@ export class PaymentCardComponent implements OnInit {
   userName: string;
   userId: string;
   isCardSelected = false;
+  isCardToActive = false;
   selectedCard: PaymentCard.Model;
 
   constructor(
     private dialog: MatDialog,
     private paymentCardService: PaymentCardManagementService,
+    private messageService: MessageService
   ) {
   }
 
@@ -67,13 +71,38 @@ export class PaymentCardComponent implements OnInit {
 
   selectPaymentCard(card: PaymentCard.Model) {
     if (card === this.selectedCard) {
-      this.isCardSelected = false;
       this.selectedCard = null;
+      this.isCardSelected = false;
+      this.isCardToActive = false;
     } else {
       this.selectedCard = card;
       this.isCardSelected = true;
+      this.isCardToActive = !card.cardActive;
     }
-    console.log(this.selectedCard);
+  }
+
+  activatePaymentCard() {
+    this.paymentCardService.activateCard(this.selectedCard.id)
+      .subscribe(resData => {
+        console.log(resData);
+        this.messageService.showMessage(SUCCESSFULLY_ACTIVATED);
+        this.fetchUserPaymentCards(this.user.id);
+      }, error => {
+        console.log(error);
+        this.messageService.showMessage(UNEXPECTED_ERROR);
+      });
+  }
+
+  deletePaymentCard() {
+    this.paymentCardService.deletePaymentCard(this.selectedCard.id)
+      .subscribe(resData => {
+        console.log(resData);
+        this.messageService.showMessage(SUCCESSFULLY_DELETED);
+        this.fetchUserPaymentCards(this.user.id);
+      }, error => {
+        console.log(error);
+        this.messageService.showMessage(UNEXPECTED_ERROR);
+      });
   }
 
   addNewPaymentCard() {
@@ -92,9 +121,6 @@ export class PaymentCardComponent implements OnInit {
         console.log(error);
       }
     );
-  }
-
-  deletePaymentCard() {
   }
 
   private combineUserName(user: User.Model) {
