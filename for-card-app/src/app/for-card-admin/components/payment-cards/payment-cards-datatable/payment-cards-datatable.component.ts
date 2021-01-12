@@ -2,6 +2,10 @@ import {AfterViewInit, Component, Input, OnInit, ViewChild} from '@angular/core'
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
+import {MatDialog} from '@angular/material/dialog';
+import {PaymentCardDetailsComponent} from '../payment-card-details/payment-card-details.component';
+import {PaymentCard} from '../../../../for-card-shared/model/payment-card.model';
+import {DIALOG_WIDTH} from '../../../../for-card-shared/utils/basic-properties';
 
 @Component({
   selector: 'app-payment-cards-datatable',
@@ -15,11 +19,14 @@ export class PaymentCardsDatatableComponent implements OnInit, AfterViewInit {
   @ViewChild('paginator', {static: false}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   @Input() displayedColumns: Array<string>;
+
   @Input() set data(data: any[]) {
     this.setDatasource(data);
   }
 
-  constructor() {
+  constructor(
+    private dialog: MatDialog
+  ) {
   }
 
   ngOnInit(): void {
@@ -36,4 +43,13 @@ export class PaymentCardsDatatableComponent implements OnInit, AfterViewInit {
     this.datasource.paginator = this.paginator;
     this.datasource.sort = this.sort;
   }
+
+  openCardDetails(paymentCard: PaymentCard.Model) {
+    console.log(paymentCard);
+    this.dialog.open(PaymentCardDetailsComponent, {
+      width: DIALOG_WIDTH,
+      data: paymentCard
+    });
+  }
+
 }

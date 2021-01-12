@@ -1,4 +1,22 @@
-<app-payment-cards-datatable
-  [data]="data"
-  [displayedColumns]="displayedColumns">
-</app-payment-cards-datatable>
+<div class="" *ngIf="loading">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+
+<div class="wrapper">
+  <div class="card">
+    <div class="card-header">
+      <h1>Payment cards</h1>
+    </div>
+
+    <app-payment-cards-datatable
+      *ngIf="paymentCards"
+      [data]="paymentCards"
+      [displayedColumns]="displayedColumns">
+    </app-payment-cards-datatable>
+
+    <div class="no-records" *ngIf="noRecords">
+      No records found
+    </div>
+
+  </div>
+</div>

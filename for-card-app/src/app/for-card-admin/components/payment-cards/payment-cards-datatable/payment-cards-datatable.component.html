@@ -6,7 +6,7 @@
     <ng-container matColumnDef="code">
       <mat-header-cell *matHeaderCellDef>Card code</mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <a [routerLink]="[]">
+        <a [routerLink]="[]" (click)="openCardDetails(element)">
           <div>
 
           </div>
@@ -18,19 +18,19 @@
     <!-- Payment card provider column -->
     <ng-container matColumnDef="cardProvider">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Provider</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.cardProvider}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.paymentCardProvider}}</mat-cell>
     </ng-container>
 
     <!-- Payment card holder column -->
     <ng-container matColumnDef="cardHolder">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Card holder</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.cardHolder}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.paymentCardHolder}}</mat-cell>
     </ng-container>
 
     <!-- Payment card number -->
     <ng-container matColumnDef="cardNumber">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Number</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.cardNumber | CardNumberPipe}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.paymentCardNumber | CardNumberPipe}}</mat-cell>
     </ng-container>
 
     <!-- Payment card expiry date -->
@@ -38,6 +38,9 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header>Expiry date</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.cardExpiryDate | PaymentCardDatePipe}}</mat-cell>
     </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
 
   </mat-table>
 
