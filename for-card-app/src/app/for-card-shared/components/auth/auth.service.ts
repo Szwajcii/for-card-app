@@ -49,6 +49,7 @@ export class AuthService {
   autoLogin() {
     const userData: UserContext = JSON.parse(localStorage.getItem(AuthService.USER_CONTEXT));
     if (!userData) {
+      this.router.navigate(['/home']);
       return;
     }
 
