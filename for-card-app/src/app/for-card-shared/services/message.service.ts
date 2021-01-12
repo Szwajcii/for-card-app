@@ -13,7 +13,8 @@ export class MessageService {
     this.snackBar.open(message, 'close', {
       duration: timeout,
       horizontalPosition: 'left',
-      verticalPosition: 'top'
+      verticalPosition: 'top',
+      panelClass: ['snackbar']
     });
   }
 
