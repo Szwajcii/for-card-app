@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 2em;
 
   .home-page__auth, .home-page__image {
     width: 50%;
@@ -45,7 +46,51 @@
     }
 
   }
+}
 
+section {
+  display: flex;
+  justify-content: space-between;
 
+  &:not(:last-child) {
+    margin-bottom: 6em;
+  }
+
+  .article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    padding: 3em;
+
+    h2, a {
+      color: $col-primary;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      font-size: 1.2em;
+
+      &:hover {
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s all ease-in-out;
+
+        i {
+          margin-left: 1em;
+        }
+
+      }
+
+      i {
+        margin-left: 0.5em;
+      }
+
+    }
+
+  }
 
 }
