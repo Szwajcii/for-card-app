@@ -5,6 +5,8 @@ import {ForCardGuard} from './for-card-shared/services/guards/for-card-guard';
 import {ForCardMatcher} from './for-card-shared/services/matcher';
 import {Role} from './for-card-shared/model/role.model';
 import {HomeComponent} from './for-card-shared/components/home/home.component';
+import {AboutUsComponent} from './for-card-shared/components/about-us/about-us.component';
+import {ContactComponent} from './for-card-shared/components/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -28,11 +30,23 @@ const routes: Routes = [
   },
   {
     path: 'home', component: HomeComponent
+  },
+  {
+    path: 'about-us',
+    children: [
+      {path: '', component: AboutUsComponent}
+    ]
+  },
+  {
+    path: 'contact',
+    children: [
+      {path: '', component: ContactComponent}
+    ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {anchorScrolling: 'enabled'})],
+  imports: [RouterModule.forRoot(routes, {anchorScrolling: 'enabled', onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
