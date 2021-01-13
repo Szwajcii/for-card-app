@@ -3,12 +3,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2%;
+  margin: 2% 3%;
 
   .nav-logo {
 
     img {
       width: 60%;
+    }
+
+    i {
+      color: $col-primary;
+      font-size: 6em;
     }
 
   }
@@ -20,6 +25,7 @@
       justify-content: space-between;
       margin: 0;
       list-style: none;
+      padding: 0;
 
       li {
 
@@ -39,6 +45,24 @@
         .active-link {
           color: $col-primary;
         }
+
+      }
+
+    }
+
+  }
+
+  .collapsed {
+    position: fixed;
+    right: 3em;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+
+
 
       }
 
