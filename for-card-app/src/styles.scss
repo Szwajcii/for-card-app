@@ -17,6 +17,7 @@
 @import "theme/molecules/snackbar.scss";
 
 /* PAGES */
+@import "theme/pages/contact.scss";
 @import "theme/pages/dialog.scss";
 @import "theme/pages/footer.scss";
 @import "theme/pages/home-page.scss";
@@ -35,12 +36,13 @@ html, body {
   background: $bgColor;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  position: relative;
 }
 
 .wrapper {
   width: 100%;
   max-width: $wrapper-width;
-  padding: 6em 2em;
+  padding: 6em 3em;
   margin: 0 auto;
 
   @media only screen and (max-width: 1200px) {

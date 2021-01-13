@@ -1,5 +1,57 @@
 .footer {
   width: 100%;
-  height: 200px;
+  min-height: 240px;
   background: $col-primary;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 2em;
+  padding: 4em 8em;
+  color: white;
+
+  div {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:first-child) {
+      align-items: center;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    ul {
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      margin-bottom: 0;
+
+      li {
+
+        a {
+
+          color: white;
+          text-decoration: none;
+
+        }
+
+      }
+
+      &.follow-us {
+        flex-direction: row;
+        justify-content: space-between;
+
+        li {
+          margin: 0 1em;
+        }
+
+      }
+
+    }
+
+  }
+
 }

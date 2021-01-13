@@ -1,0 +1,13 @@
+.contact-page {
+  display: flex;
+  justify-content: space-between;
+
+  > div {
+    width: 50%;
+  }
+
+  .mat-divider-vertical {
+    margin: 0 2em;
+  }
+
+}
