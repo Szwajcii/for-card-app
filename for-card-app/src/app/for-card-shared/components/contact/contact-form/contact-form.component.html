@@ -1,1 +1,27 @@
-<p>contact-form works!</p>
+<div class="contact-page">
+  <div>
+    <form [formGroup]="generalForm" *ngIf="generalForm">
+      <h2>Write us!</h2>
+
+      <app-form-group
+        *ngIf="contactForm"
+        [fg]="generalForm"
+        [name]="'contactForm'"
+        [controls]="contactFormControls"
+        [gridColumns]="gridColumns">
+      </app-form-group>
+
+      <div class="controls">
+        <button mat-flat-button type="submit" color="accent"
+                (click)="onSubmit()" [disabled]="generalForm.invalid">Save
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <mat-divider [vertical]="true"></mat-divider>
+
+  <div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, mollitia?
+  </div>
+</div>
