@@ -1,0 +1,40 @@
+<h2 *ngIf="sectionName">{{sectionName}}</h2>
+<div class="details--grid" *ngIf="detailsFieldsModel">
+
+  <ng-container *ngFor="let element of detailsFieldsModel; let i=index">
+
+    <div class="details--field" *ngIf="element.value != null">
+      <span>{{element.label}}</span>
+
+      <ng-container [ngSwitch]="element.type">
+
+        <!-- Card number case -->
+        <h3 *ngSwitchCase="'cardNumber'">{{element.value | FormatCardNumberPipe}}</h3>
+
+        <!-- Phone type case -->
+        <h3 *ngSwitchCase="'phone'">{{element.value | PhoneNumberPipe}}</h3>
+
+        <!-- Email type case -->
+        <h3 *ngSwitchCase="'email'">{{element.value}}</h3>
+
+        <!-- Price type case -->
+        <h3 *ngSwitchCase="'price'">{{element.value | PricePipe}}</h3>
+
+        <!-- Zip code type case -->
+        <h3 *ngSwitchCase="'zipCode'">{{element.value}}</h3>
+
+        <!-- Default case -->
+        <h3 *ngSwitchDefault>{{element.value}}</h3>
+
+      </ng-container>
+
+    </div>
+
+    <div class="details--field" *ngIf="element.value == null">
+      <span>{{element.label}}</span>
+      <h3> - </h3>
+    </div>
+
+  </ng-container>
+
+</div>
