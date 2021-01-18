@@ -20,6 +20,10 @@
 
   .nav-links {
 
+    button {
+      display: none;
+    }
+
     ul {
       display: flex;
       justify-content: space-between;
@@ -52,17 +56,47 @@
 
   }
 
-  .collapsed {
-    position: fixed;
-    right: 3em;
+  .nav-links {
 
-    ul {
+    &.collapsed {
+      z-index: 1000;
       display: flex;
       flex-direction: column;
+      align-items: flex-end;
+      position: fixed;
+      right: 4em;
+      top: 3em;
 
-      li {
+      button {
+        display: block;
+        width: 50px;
+        height: 50px;
+        min-width: 0;
+        padding: 0;
+        margin: 0 0 0.5em;
 
+        &.menu-btn {
+          border-radius: 100%;
+        }
 
+      }
+
+      ul {
+
+        &.menu-links {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+
+          li {
+            margin-right: 0;
+            margin-bottom: 0.5em;
+          }
+        }
+
+        &.hidden {
+          display: none;
+        }
 
       }
 

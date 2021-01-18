@@ -3,11 +3,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 
   .home-page__auth, .home-page__image {
     width: 50%;
     height: inherit;
+  }
+
+  .home-page__image {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    img {
+      width: 70%;
+    }
+
   }
 
   .home-page__auth {

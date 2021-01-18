@@ -2,8 +2,9 @@
   width: 500px;
   height: 300px;
   position: relative;
-  background-color: #21313c;
+  background-color: lighten(#3949ab, 40);
   border-radius: 10px;
+  box-shadow: $box-shadow__base;
 
   .code-header {
     position: absolute;
@@ -13,7 +14,7 @@
     height: 30px;
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
-    background-color: #3d5362;
+    background-color: $col-primary;
     display: flex;
     align-items: center;
     padding: 0 5px;
