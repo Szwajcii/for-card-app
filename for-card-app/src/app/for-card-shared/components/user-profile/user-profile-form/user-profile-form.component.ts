@@ -16,9 +16,9 @@ export class UserProfileFormComponent implements OnInit {
 
   @Input() userProfile: any;
   @Input() userProfileFormFields: FormGroupHelper.Model[];
+  @Input() isDisabled = true;
+  @Input() adminView = false;
   @Output() submitEvent = new EventEmitter();
-
-  isDisabled = true;
   gridColumns = 4;
 
   generalForm: FormGroup;
@@ -70,10 +70,11 @@ export class UserProfileFormComponent implements OnInit {
         .setValue(userProfile[control.inputName])
       );
 
+    // Address is nested object in userProfile
     this.addressDetailsFormControls
       .forEach(control => this.addressDetailsForm
         .get(control.inputName)
-        .setValue(userProfile[control.inputName])
+        .setValue(userProfile.address[control.inputName])
       );
   }
 
@@ -90,10 +91,16 @@ export class UserProfileFormComponent implements OnInit {
   onSubmit() {
     this.submitEvent.emit({
       userId: this.userProfile.id,
+      userCode: this.userProfile.code,
       userEmail: this.userProfile.email,
       profileDetails: this.userProfileDetailsForm,
       addressDetails: this.addressDetailsForm
     });
+    this.toggleEdit();
+  }
+
+  goBack() {
+    this.router.navigate(['/users']);
   }
 
 }

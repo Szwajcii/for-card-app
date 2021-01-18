@@ -1,5 +1,34 @@
 import {Validators} from '@angular/forms';
 import {FormGroupHelper} from './form-group-helper.model';
+import {ValueLabel} from './value-label';
+
+
+export const countries: ValueLabel[] = [
+  {
+    value: 'Poland',
+    label: 'Poland'
+  },
+  {
+    value: 'USA',
+    label: 'USA'
+  },
+  {
+    value: 'Germany',
+    label: 'Germany'
+  },
+  {
+    value: 'Netherlands',
+    label: 'Netherlands'
+  },
+  {
+    value: 'Norway',
+    label: 'Norway'
+  },
+  {
+    value: 'Sweden',
+    label: 'Sweden'
+  },
+];
 
 export const addressFormFields: FormGroupHelper.Model[] = [
   {
@@ -47,6 +76,7 @@ export const addressFormFields: FormGroupHelper.Model[] = [
     label: 'Country',
     validators: [Validators.required],
     type: 'select',
+    selectOptions: countries,
     cols: 2,
     rows: 1
   }

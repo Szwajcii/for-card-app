@@ -1,6 +1,6 @@
 <div class="card-header">
-  <h1>User #</h1>
-  <div class="card-controls">
+  <h1>User #{{userProfile.code}}</h1>
+  <div class="card-controls" *ngIf="!adminView">
     <mat-slide-toggle (change)="toggleEdit()">Edit</mat-slide-toggle>
   </div>
 </div>
@@ -30,12 +30,16 @@
     </app-form-group>
   </div>
 
-  <div class="controls">
+  <div class="controls" *ngIf="!adminView">
     <button mat-flat-button type="submit" color="accent"
             (click)="onSubmit()" [disabled]="this.isDisabled">Save
     </button>
   </div>
 
-</form>
+  <div class="controls" style="justify-content: flex-start" *ngIf="adminView">
+    <button mat-stroked-button type="button" color="warn"
+            (click)="goBack()">Go to users
+    </button>
+  </div>
 
-<p>General form {{generalForm.value | json}}</p>
+</form>

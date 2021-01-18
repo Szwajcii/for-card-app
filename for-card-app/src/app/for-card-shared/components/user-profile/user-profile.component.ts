@@ -61,6 +61,7 @@ export class UserProfileComponent implements OnInit {
 
     userModel.address = $event.addressDetails.value;
     userModel.id = $event.userId;
+    userModel.code = $event.userCode;
     userModel.email = $event.userEmail;
 
     this.userManagementService.update(userModel)
