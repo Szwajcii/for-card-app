@@ -103,6 +103,7 @@ export class PaymentCardFormComponent implements OnInit {
       .subscribe(resData => {
         console.log(resData);
         this.messageService.showMessage(SUCCESSFULLY_DELETED);
+        this.dialogRef.close(true);
       }, error => {
         console.log(error);
         this.messageService.showMessage(UNEXPECTED_ERROR);

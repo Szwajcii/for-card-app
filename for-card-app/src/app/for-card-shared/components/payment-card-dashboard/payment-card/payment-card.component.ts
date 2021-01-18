@@ -85,8 +85,7 @@ export class PaymentCardComponent implements OnInit {
     this.paymentCardService.activateCard(this.selectedCard.id)
       .subscribe(resData => {
         console.log(resData);
-        this.messageService.showMessage(SUCCESSFULLY_ACTIVATED);
-        this.fetchUserPaymentCards(this.user.id);
+        this.handleSuccessfulAction(SUCCESSFULLY_ACTIVATED);
       }, error => {
         console.log(error);
         this.messageService.showMessage(UNEXPECTED_ERROR);
@@ -97,12 +96,19 @@ export class PaymentCardComponent implements OnInit {
     this.paymentCardService.deletePaymentCard(this.selectedCard.id)
       .subscribe(resData => {
         console.log(resData);
-        this.messageService.showMessage(SUCCESSFULLY_DELETED);
-        this.fetchUserPaymentCards(this.user.id);
+        this.handleSuccessfulAction(SUCCESSFULLY_DELETED);
       }, error => {
         console.log(error);
         this.messageService.showMessage(UNEXPECTED_ERROR);
       });
+  }
+
+  handleSuccessfulAction(message: string) {
+    this.messageService.showMessage(message);
+    this.fetchUserPaymentCards(this.user.id);
+    this.selectedCard = null;
+    this.isCardSelected = false;
+    this.isCardToActive = false;
   }
 
   addNewPaymentCard() {
@@ -135,5 +141,15 @@ export class PaymentCardComponent implements OnInit {
     }
 
     return stringArray.join(' ').trim();
+  }
+
+  addStyleToSelectedCard(card: PaymentCard.Model) {
+    if (this.selectedCard) {
+      if (card === this.selectedCard) {
+        return {border: '3px solid blue'};
+      } else {
+        return {backgroundColor: '#e0e0e0', color: 'red'};
+      }
+    }
   }
 }

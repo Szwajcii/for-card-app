@@ -21,7 +21,7 @@
 
           <div>
 
-            <div class="grid-card">
+            <div class="grid-card" [ngStyle]="addStyleToSelectedCard(card)">
               <a [routerLink]="" class="payment-card" (click)="selectPaymentCard(card)">
                 <div class="payment-card__details">
                   <div class="payment-card__logo">
