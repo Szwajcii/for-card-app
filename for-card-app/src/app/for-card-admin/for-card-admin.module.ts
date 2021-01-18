@@ -11,6 +11,9 @@ import {PaymentCardsComponent} from './components/payment-cards/payment-cards.co
 import {PaymentCardsDatatableComponent} from './components/payment-cards/payment-cards-datatable/payment-cards-datatable.component';
 import {PaymentCardDetailsComponent} from './components/payment-cards/payment-card-details/payment-card-details.component';
 import {UserDetailsComponent} from './components/users/user-details/user-details.component';
+import {MessagesComponent} from './components/messages/messages.component';
+import {MessageDatatableComponent} from './components/messages/message-datatable/message-datatable.component';
+import {ArchivedMessagesComponent} from './components/messages/archived-messages/archived-messages.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import {UserDetailsComponent} from './components/users/user-details/user-details
     PaymentCardsComponent,
     PaymentCardsDatatableComponent,
     PaymentCardDetailsComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    MessagesComponent,
+    MessageDatatableComponent,
+    ArchivedMessagesComponent
   ],
   exports: [
     ForCardMatModule
