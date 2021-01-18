@@ -6,11 +6,11 @@
     <ng-container matColumnDef="code">
       <mat-header-cell *matHeaderCellDef>Card code</mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <a [routerLink]="[]" (click)="openCardDetails(element)">
-          <div>
-
+        <a [routerLink]="[]" (click)="openCardDetails(element)" class="card--name">
+          <div class="card--logo">
+            <img src="./assets/payment-card/{{element.paymentCardProvider}}-logo.png" alt="Payment card provider logo">
           </div>
-          {{element.id}}
+          {{element.code}}
         </a>
       </mat-cell>
     </ng-container>

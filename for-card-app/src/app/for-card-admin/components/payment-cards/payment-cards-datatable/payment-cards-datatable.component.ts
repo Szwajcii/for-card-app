@@ -45,7 +45,6 @@ export class PaymentCardsDatatableComponent implements OnInit, AfterViewInit {
   }
 
   openCardDetails(paymentCard: PaymentCard.Model) {
-    console.log(paymentCard);
     this.dialog.open(PaymentCardDetailsComponent, {
       width: DIALOG_WIDTH,
       data: paymentCard

@@ -1,4 +1,17 @@
 <div>
+
+  <div class="details" *ngIf="paymentCard">
+
+    <div class="details--img">
+      <img src="./assets/payment-card/{{paymentCard.paymentCardProvider}}-logo.png" alt="Payment card provider logo">
+    </div>
+
+    <app-details-form-group
+      [detailsModel]="paymentCard"
+      [detailsFieldsModel]="paymentCardDetailsFields">
+    </app-details-form-group>
+  </div>
+
   <div class="controls">
     <button mat-flat-button type="button" class="col-danger" color="warn"
             (click)="onClose()">Close
