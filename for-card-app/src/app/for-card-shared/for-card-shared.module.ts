@@ -5,7 +5,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FormGroupComponent} from './components/form-group/form-group.component';
 import {LoadingSpinnerComponent} from './components/loading-spinner/loading-spinner.component';
 import {HomeComponent} from './components/home/home.component';
-import {CardNumberPipe} from './services/card-number.pipe';
+import {CardNumberPipe, FormatCardNumberPipe} from './services/card-number.pipe';
 import {DatePipe, DateTimePipe, PaymentCardDatePipe} from './services/date.pipe';
 import {UserProfileComponent} from './components/user-profile/user-profile.component';
 import {PaymentCardComponent} from './components/payment-card-dashboard/payment-card/payment-card.component';
@@ -21,6 +21,7 @@ import {PaymentCardDashboardComponent} from './components/payment-card-dashboard
 import {ContactComponent} from './components/contact/contact.component';
 import {AboutUsComponent} from './components/about-us/about-us.component';
 import {ContactFormComponent} from './components/contact/contact-form/contact-form.component';
+import { DetailsFormGroupComponent } from './components/details-form-group/details-form-group.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {ContactFormComponent} from './components/contact/contact-form/contact-fo
     DatePipe,
     DateTimePipe,
     PaymentCardDatePipe,
+    FormatCardNumberPipe,
     UserProfileComponent,
     PaymentCardComponent,
     PaymentCardFormComponent,
@@ -42,16 +44,20 @@ import {ContactFormComponent} from './components/contact/contact-form/contact-fo
     PaymentCardDashboardComponent,
     ContactComponent,
     AboutUsComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    DetailsFormGroupComponent
   ],
   exports: [
     CardNumberPipe,
     DatePipe,
     DateTimePipe,
     PaymentCardDatePipe,
+    FormatCardNumberPipe,
     ForCardMatModule,
     UserCanAccessDirective,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    UserProfileFormComponent,
+    DetailsFormGroupComponent
   ],
   imports: [
     CommonModule,
