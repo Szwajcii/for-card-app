@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+a {
+  &.active-link {
+    color: $col-primary;
+
+    &.tab-link {
+      border-bottom: 2px solid $col-primary;
+      font-weight: bold;
+    }
+
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}

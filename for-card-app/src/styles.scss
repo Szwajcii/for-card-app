@@ -5,6 +5,7 @@
 /* ATOMS */
 @import "theme/atoms/controls.scss";
 @import "theme/atoms/grid.scss";
+@import "theme/atoms/links.scss";
 @import "theme/atoms/variables.scss";
 
 /* MOLECULES */
@@ -42,7 +43,7 @@ html, body {
 .wrapper {
   width: 100%;
   max-width: $wrapper-width;
-  padding: 6em 3em;
+  padding: 4em 3em;
   margin: 0 auto;
 
   @media only screen and (max-width: 1200px) {
