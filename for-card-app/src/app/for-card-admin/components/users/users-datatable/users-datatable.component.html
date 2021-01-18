@@ -10,6 +10,12 @@
       </mat-cell>
     </ng-container>
 
+    <!-- Gender column -->
+    <ng-container matColumnDef="gender">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Gender</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.gender}}</mat-cell>
+    </ng-container>
+
     <!-- Cards column -->
     <ng-container matColumnDef="cards">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Cards</mat-header-cell>

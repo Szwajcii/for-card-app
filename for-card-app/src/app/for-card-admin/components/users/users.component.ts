@@ -11,12 +11,13 @@ import {CONNECTION_PROBLEM} from '../../../for-card-shared/utils/messages';
 })
 export class UsersComponent implements OnInit {
 
-  users: User.Model[];
+  users: User.DataModel[];
   loading = true;
   noRecords = false;
 
   public displayedColumns: Array<string> = [
     'name',
+    'gender',
     'cards',
     'createdAt',
     'modifiedAt',
@@ -32,6 +33,7 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this.userManagementService.findAllUsers()
       .subscribe(resData => {
+        console.log(resData);
         this.loading = false;
         this.users = resData;
         this.noRecords = this.users.length === 0;
