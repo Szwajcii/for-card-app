@@ -6,6 +6,7 @@ export namespace User {
 
   export interface Model {
     id: string;
+    code: string;
     roles: Role[];
     firstName: string;
     lastName: string;
@@ -14,6 +15,17 @@ export namespace User {
     address: Address;
     gender: Gender;
     createdAt: Date | string;
+  }
+
+  export interface DataModel {
+    id: string;
+    code: string;
+    gender: string;
+    name: string;
+    cards: number;
+    createdAt: Date | string;
+    modifiedAt: Date | string;
+    country: string;
   }
 
 }

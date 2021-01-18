@@ -2,6 +2,7 @@ export namespace PaymentCard {
 
   export interface Model {
     id: string;
+    code: string;
     userId: string;
     paymentCardProvider: string;
     paymentCardNumber: string;
