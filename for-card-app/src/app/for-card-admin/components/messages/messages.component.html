@@ -10,7 +10,9 @@
     </nav>
 
     <app-message-datatable
-      [displayedColumns]="">
+      *ngIf="newMessages"
+      [displayedColumns]="displayedColumns"
+      [data]="newMessages">
     </app-message-datatable>
 
   </div>

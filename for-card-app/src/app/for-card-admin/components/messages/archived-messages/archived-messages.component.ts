@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ContactManagementService} from "../../../../for-card-shared/resources/contact-management.service";
+import {ContactManagementService} from '../../../../for-card-shared/resources/contact-management.service';
 import {ContactMessage} from '../../../../for-card-shared/model/contact-message.model';
 
 @Component({

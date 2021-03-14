@@ -12,6 +12,12 @@ export class MessagesComponent implements OnInit {
   newMessages: ContactMessage.Model[];
   isLoading = false;
 
+  displayedColumns = [
+    'name',
+    'email',
+    'message'
+  ];
+
   constructor(
     private contactMessagesService: ContactManagementService
   ) {
