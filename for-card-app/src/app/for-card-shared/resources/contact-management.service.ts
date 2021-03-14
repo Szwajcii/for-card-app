@@ -14,7 +14,7 @@ export class ContactManagementService {
   }
 
   findAllArchivedMessages() {
-    return this.http.get<ContactMessage.Model[]>(`${this.contactApi}/all/unread`);
+    return this.http.get<ContactMessage.Model[]>(`${this.contactApi}/all/archived`);
   }
 
   findAllUnreadMessages() {
