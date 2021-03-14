@@ -1,11 +1,16 @@
 <nav>
-  <div class="nav-container">
+  <div class="nav-container" id="navContainer">
     <div class="nav-logo">
-      <img src="/assets/carly_logo.png" alt="For card logo">
+      <a routerLinkActive="active-link" [routerLink]="['/home']">
+        <i class="fas fa-credit-card"></i>
+      </a>
     </div>
 
-    <div class="nav-links">
-      <ul>
+    <div class="nav-links" id="navLinks">
+      <button mat-flat-button type="button" color="accent" class="menu-btn" id="menuBtn" (click)="openMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul id="menuLinks" class="menu-links">
         <li>
           <a routerLinkActive="active-link" [routerLink]="['/home']">Home</a>
         </li>
@@ -15,14 +20,34 @@
         <li *appUserCanAccess="[ForCardAdmin, ForCardUser]">
           <a routerLinkActive="active-link" [routerLink]="['/payment-cards']">Payment cards</a>
         </li>
+        <li *appUserCanAccess="[ForCardAdmin]">
+          <a routerLinkActive="active-link" [routerLink]="['/messages']" [class.active-link]="router.isActive('/messages', false)">Messages</a>
+        </li>
         <li *appUserCanAccess="[ForCardUser]">
           <a routerLinkActive="active-link" [routerLink]="['/profile']">Profile</a>
         </li>
         <li>
           <a routerLinkActive="active-link" [routerLink]="['/about-us']">About us</a>
         </li>
-        <li>
+        <li *appUserCanAccess="[ForCardUser]">
           <a routerLinkActive="active-link" [routerLink]="['/contact']">Contact</a>
+        </li>
+        <li>
+          <a routerLinkActive="active-link" [routerLink]="['/contact']">
+            <mat-icon matBadge="15" matBadgeColor="warn">
+              <i class="fas fa-bell"></i>
+            </mat-icon>
+          </a>
+        </li>
+        <li>
+          <a routerLinkActive="active-link" [routerLink]="['/contact']">
+            <mat-icon matBadge="15" matBadgeColor="warn">mail</mat-icon>
+          </a>
+        </li>
+        <li>
+          <a routerLinkActive="active-link" [routerLink]="['/contact']">
+            <mat-icon matBadge="15" matBadgeColor="warn">volume_up</mat-icon>
+          </a>
         </li>
         <li *ngIf="isAuthenticated">
           <a [routerLink]="" (click)="onLogout()">Logout</a>

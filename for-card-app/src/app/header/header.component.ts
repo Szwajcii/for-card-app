@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from '../for-card-shared/components/auth/auth.service';
 import {Subscription} from 'rxjs';
 import {Role} from '../for-card-shared/model/role.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(
     private authService: AuthService,
+    public router: Router
   ) {
   }
 
@@ -32,6 +34,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onLogout() {
     this.authService.logout();
+  }
+
+  openMenu() {
+    const menu = document.getElementById('menuLinks');
+    menu.classList.toggle('hidden');
   }
 
 }
